@@ -2,7 +2,8 @@
 import os
 import shutil
 from unittest import TestCase
-
+import random
+import string
 
 class RunResult(object):
     cpu_time_limited = 1
@@ -21,7 +22,7 @@ class BaseTestCase(TestCase):
         return workspace
 
     def rand_str(self):
-        return ''.join(map(lambda xx:(hex(ord(xx))[2:]), os.urandom(16)))
+        return ''.join(random.sample(string.digits + string.ascii_letters, 16))
 
     def _compile_c(self, src_name, extra_flags=None):
         path = os.path.dirname(os.path.abspath(__file__))

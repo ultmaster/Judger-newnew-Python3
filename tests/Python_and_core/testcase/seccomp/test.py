@@ -8,7 +8,7 @@ from .. import base
 
 class SeccompTest(base.BaseTestCase):
     def setUp(self):
-        print "Running", self._testMethodName
+        print("Running", self._testMethodName)
         self.config = {"max_cpu_time": 1000,
                        "max_real_time": 3000,
                        "max_memory": 1024 * 1024 * 128,
