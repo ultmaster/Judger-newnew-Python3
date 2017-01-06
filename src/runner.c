@@ -98,7 +98,7 @@ void run(struct config *_config, struct result *_result) {
                                   resource_usage.ru_utime.tv_usec / 1000 +
                                   resource_usage.ru_stime.tv_sec * 1000 +
                                   resource_usage.ru_stime.tv_usec / 1000);
-        _result->memory = resource_usage.ru_maxrss * 1024;
+        _result->memory = resource_usage.ru_minflt * getpagesize();
 
         // get end time
         gettimeofday(&end, NULL);
