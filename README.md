@@ -3,3 +3,9 @@
 Judger for OnlineJudge 
 
 [Document](http://docs.onlinejudge.me/Judger/)
+
+## Preparation
+```
+cmake .
+sudo make install
+```
